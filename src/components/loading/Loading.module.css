@@ -1,0 +1,43 @@
+.loadingContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, var(--bg-primary), var(--bg-secondary));
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--bg-card);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spinner 0.8s ease-in-out infinite;
+  position: relative;
+}
+
+.loadingSpinner::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  filter: blur(12px);
+  opacity: 0.2;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
