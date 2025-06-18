@@ -2,8 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px;
-  width: 100%;
+  min-height: 60vh;
+  width: 100vw;
+  padding: 1rem;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .notFoundContent {
@@ -14,7 +21,36 @@
   text-align: center;
   max-width: 600px;
   width: 100%;
-  margin: 2rem;
+  margin: 2rem auto;
+  box-sizing: border-box;
+}
+.homeLink {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+}
+@media (max-width: 600px) {
+  .notFoundContent {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 98vw;
+  }
+  .homeLink {
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    max-width: 100%;
+  }
 }
 
 .notFoundContent h2 {
@@ -24,4 +60,22 @@
 
 .notFoundContent p {
   color: var(--text-secondary);
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.homeLink:hover {
+  background: var(--primary-dark, #0056b3);
 }
