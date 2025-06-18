@@ -1,3 +1,155 @@
+/* Modern filter styles */
+.modernFilterGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 1rem 0 0;
+  min-width: 120px;
+}
+.filterLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.modernSelectWrapper {
+  position: relative;
+  width: 100%;
+}
+.modernSelect {
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary, #222);
+  font-size: 1rem;
+  appearance: none;
+  outline: none;
+  transition:
+    border-color var(--transition-normal),
+    box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.06);
+}
+.modernSelect:focus,
+.modernSelect:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
+}
+.modernSelect option {
+  background: #fff;
+  color: #222;
+}
+.selectArrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-tertiary);
+  font-size: 1rem;
+}
+.modernInput {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color var(--transition-normal);
+}
+.modernInput:focus {
+  border-color: var(--primary);
+}
+@media (max-width: 600px) {
+  .modernFilterGroup {
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+  .modernSelect,
+  .modernInput {
+    font-size: 1.1rem;
+  }
+}
+/* Clear button for search */
+.clearButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: var(--border-color, #e2e8f0);
+  color: var(--text-primary, #222);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  margin-left: 0.5rem;
+}
+.clearButton:hover {
+  background: var(--primary);
+  color: #fff;
+}
+@media (max-width: 600px) {
+  .clearButton {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+/* Error message for search errors */
+.errorMsg {
+  color: var(--error, #e53e3e);
+  background: rgba(229, 62, 62, 0.08);
+  border: 1px solid var(--error, #e53e3e);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin: 2rem auto 0 auto;
+  max-width: 400px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+}
+/* Style for empty filter message */
+.emptyFilterMsg {
+  grid-column: 1/-1;
+  text-align: center;
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 2rem 0;
+  opacity: 0.85;
+}
+/* Filter Bar Styles */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+.filterSelect,
+.filterInput {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  transition: border-color var(--transition-normal);
+}
+
+.filterSelect:focus,
+.filterInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
 .pageContainer {
   min-height: 100vh;
   background: linear-gradient(45deg, var(--bg-primary), var(--bg-secondary));
@@ -44,6 +196,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0.5rem;
+  justify-content: center;
 }
 
 .repoCard {
@@ -222,6 +375,18 @@
   display: flex;
   gap: 0.5rem;
   padding: 0 1rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+  .searchForm {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .searchButton {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }
 
 .searchInput {
@@ -263,8 +428,27 @@
 }
 
 .viewingUser {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: var(--text-tertiary);
-  opacity: 0.8;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 600;
+  opacity: 1;
+  letter-spacing: 0.01em;
+}
+
+/* Force single column on small screens */
+@media (max-width: 600px) {
+  .reposGrid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .repoCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
 }

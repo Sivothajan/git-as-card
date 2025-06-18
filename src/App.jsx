@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Git from "./components/Git/Git";
+import NotFound from "./components/notFound/NotFound";
+import Git from "./components/git/Git";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
         <div className="background-gradient"></div>
         <Routes>
           <Route path="/" element={<Git />} />
+          <Route
+            path="*"
+            element={<NotFound message="404 - Page Not Found" />}
+          />
         </Routes>
       </div>
     </Router>
