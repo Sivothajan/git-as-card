@@ -1,10 +1,7 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
 import styles from "./Git.module.css";
-import Loading from "./loading/Loading";
-import NotFound from "../notFound/NotFound";
+import Loading from "../loading/Loading";
 
-const CACHE_KEY = "github-repos-cache";
-const CACHE_DURATION = 1000 * 60 * 30; // 30 minutes
 const RETRY_DELAY = 2000; // 2 seconds
 const MAX_RETRIES = 3;
 
